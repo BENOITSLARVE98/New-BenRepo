@@ -21,16 +21,25 @@ namespace SettingUp
 
             }
 
-            Console.WriteLine("\r\nIs cable plugged into guitar? ");
-            string cableIn = Console.ReadLine();
-            if (cableIn == "yes")
+            Console.WriteLine("\r\nIs cable plugged into guitar? yes / no ");
+            string CheckCableIn = Console.ReadLine();
+            if (CheckCableIn == "yes")
             {
                 Console.WriteLine("Now plug other end coming from the guitar into the speaker");
+
             }
-            else if (cableIn == "no")
+            while (CheckCableIn == "no")
             {
                 Console.WriteLine("You need to plug the guitar");
+                Console.WriteLine("Is cable plugged into guitar?");
+                CheckCableIn = Console.ReadLine();
             }
+
+            //Next step
+            Console.WriteLine("\r\nIs cable plugged in properly?");
+            
+
+
         }
     }
 }
