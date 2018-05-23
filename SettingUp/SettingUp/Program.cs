@@ -16,16 +16,18 @@ namespace SettingUp
             string start = Console.ReadLine();
             while (!(start=="yes"))
             {
-                Console.WriteLine(start);
+                Console.WriteLine("You are Joking!! Let's jump right in.");
+                break;
+
             }
 
             Console.WriteLine("\r\nIs cable plugged into guitar? ");
             string cableIn = Console.ReadLine();
-            if (cableIn=="yes")
+            if (cableIn == "yes")
             {
                 Console.WriteLine("Now plug other end coming from the guitar into the speaker");
             }
-            else if (cableIn=="no")
+            else if (cableIn == "no")
             {
                 Console.WriteLine("You need to plug the guitar");
             }
