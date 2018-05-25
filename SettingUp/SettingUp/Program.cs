@@ -91,6 +91,10 @@ namespace SettingUp
                     sound.SetVolume(2);
                     Console.WriteLine("Your current volume is " + sound.GetVolume());
                 }
+
+                 //I'M stuck here trying to debug my code 
+                 //Because when I run it I can't quite get my getters right after I haved set the new volume that the user wants (Line 80-92). Please help!
+                 
             }
 
             
