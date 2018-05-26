@@ -12,11 +12,20 @@ namespace SettingUp
         {
             
             Console.Clear();
-            
+
+
+            SoundSystem sound = new SoundSystem();
+
+
             //Welcome user
             Console.WriteLine("Hello and Welcome to this program\r\nWe will be setting up your guitar for practice!");
             Console.WriteLine("\r\nAre you ready to get started? yes / no");
             string start = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(start))
+            {
+                Console.WriteLine("ERROR !!!! " + "\r\nAre you ready to get started? yes / no");
+                start = Console.ReadLine();
+            }
             while (!(start=="yes"))
             {
                 Console.WriteLine("You are Joking!! Let's jump right in.");
@@ -31,7 +40,7 @@ namespace SettingUp
                 Console.WriteLine("Now plug other end coming from the guitar into the speaker");
 
             }
-            while (CheckCableIn == "no")
+            else if (CheckCableIn == "no")
             {
                 Console.WriteLine("You need to plug the guitar");
                 Console.WriteLine("Is cable plugged into guitar?");
@@ -45,7 +54,7 @@ namespace SettingUp
             {
                 Console.WriteLine("Please strum the guitar!!");
             }
-            while (ChekCableProperly == "no")
+            else if (ChekCableProperly == "no")
             {
                 Console.WriteLine("Plug it in properly to continue");
                 Console.WriteLine("Is cable plugged in properly ?");
@@ -57,7 +66,7 @@ namespace SettingUp
             Console.WriteLine("Is there any sound? yes / no ");
             string checkSound = Console.ReadLine();
 
-            SoundSystem sound = new SoundSystem();
+            
 
 
 
@@ -71,6 +80,7 @@ namespace SettingUp
                 Console.WriteLine("Would you like to adjust your volume. Type- (1): for Max=10   (2): for Med=5  (3): for Low=2");
                 string adjustString = Console.ReadLine();
                 int adjust;
+                
                 while (!int.TryParse(adjustString, out adjust))
                 {
                     Console.WriteLine("ERROR !! TRY AGAIN");
@@ -79,22 +89,20 @@ namespace SettingUp
                  if (adjust == 1)
                 {
                      sound.SetVolume(10);
-                    Console.WriteLine("Your current volume is "+sound.GetVolume());
+                    Console.WriteLine("Your current volume is now set to "+sound.GetVolume());
                 }
                  else if (adjust == 2)
                 {
                     sound.SetVolume(5);
-                    Console.WriteLine("Your current volume is " + sound.GetVolume());
+                    Console.WriteLine("Your current volume is now set to " + sound.GetVolume());
                 }
                  else if (adjust == 3)
                 {
                     sound.SetVolume(2);
-                    Console.WriteLine("Your current volume is " + sound.GetVolume());
+                    Console.WriteLine("Your current volume is now set to " + sound.GetVolume());
                 }
+                
 
-                 //I'M stuck here trying to debug my code 
-                 //Because when I run it I can't quite get my getters right after I haved set the new volume that the user wants (Line 80-92). Please help!
-                 
             }
 
             

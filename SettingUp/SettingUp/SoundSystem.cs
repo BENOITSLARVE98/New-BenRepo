@@ -8,16 +8,10 @@ namespace SettingUp
 {
     class SoundSystem
     {
+        //Member variable
         int mVolume;
 
-
-
-        //constructor 
-        //public SoundSystem(int _volume)
-        /*{
-            mVolume = _volume;
-        }
-        */
+        
 
 
         public  int GetVolume()
@@ -25,9 +19,9 @@ namespace SettingUp
             return mVolume;
         }
 
-        public void SetVolume(int mVolume)
+        public void SetVolume(int _Volume)
         {
-
+            mVolume = _Volume;
         }
     }
 }
